@@ -34,13 +34,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Terraform Format
-        #run: terraform fmt -check -recursive
-        run: terraform fmt -recursive
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      # - name: Terraform Format
+      #   #run: terraform fmt -check -recursive
+      #   run: terraform fmt -recursive
 
       - name: Terraform Init
+        # run: terraform init -reconfigure -backend-config="access_key=${{ env.ARM_ACCESS_KEY }}"
         run: terraform init -reconfigure -backend-config="access_key=${{ env.ARM_ACCESS_KEY }}"
 
       - name: Terraform Plan
