@@ -43,6 +43,6 @@ jobs:
         run: terraform init -backend-config="access_key=${{ env.ARM_ACCESS_KEY }}"
 
       - name: Terraform Plan
-        run: terraform plan -chdir=${{ WORKING_DIR }} -var-file terraform/tflabs001.tfvar
+        run: terraform plan -chdir=${{ env.WORKING_DIR }} -var-file terraform/tflabs001.tfvar
 
  
