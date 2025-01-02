@@ -21,6 +21,7 @@ env:
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
   ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
   WORKING_DIR: './terraform'
+  VARS_FILE: 'tflabs001.tfvar'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -43,6 +44,6 @@ jobs:
         run: terraform init -backend-config="access_key=${{ env.ARM_ACCESS_KEY }}"
 
       - name: Terraform Plan
-        run: terraform plan -chdir=${{ env.WORKING_DIR }} -var-file terraform/tflabs001.tfvar
+        run: terraform plan -chdir=${{ env.WORKING_DIR }} -var-file=${{ env.VARS_FILE }}
 
  
