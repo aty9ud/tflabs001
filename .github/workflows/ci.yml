@@ -47,7 +47,5 @@ jobs:
           # terraform init -backend-config="access_key=${{ env.ARM_ACCESS_KEY }}"
           terraform init
 
-      # - name: Terraform Plan
-      #   run: terraform -chdir=${{ env.WORKING_DIR }} plan -var-file=${{ env.VARS_FILE }}
-
- 
+      - name: Terraform Plan
+        run: terraform plan
