@@ -6,8 +6,8 @@ terraform {
         }
     }
     backend "azurerm" {
-        resource_group_name  = "tf_rg_blobstore"
-        storage_account_name = "tfstorageaccountdisso"
+        resource_group_name  = "adgtest001"
+        storage_account_name = "saadgtest001"
         container_name       = "tfstate"
         key                  = "tflabs001.tfstate"
         tenant_id            = secrets.ARM_TENANT_ID
