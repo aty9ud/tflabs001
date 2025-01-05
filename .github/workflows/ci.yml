@@ -47,6 +47,12 @@ jobs:
           # terraform init -backend-config="access_key=${{ env.ARM_ACCESS_KEY }}"
           terraform init
 
+      - name: Terraform Format
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Validate
+        run: terraform validate
+
       - name: Terraform Plan
         run: terraform plan
 
