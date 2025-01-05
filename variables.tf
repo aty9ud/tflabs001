@@ -1,4 +1,4 @@
-variable "rsgname" {
+variable "tstrsgname" {
   type        = string
   description = "test rg name"
   default     = "adg02tftest"
