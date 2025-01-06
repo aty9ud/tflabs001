@@ -43,14 +43,21 @@ jobs:
         run: |
           export ARM_ACCESS_KEY=${{ secrets.ARM_ACCESS_KEY }}
           # terraform init -backend-config="access_key=${{ env.ARM_ACCESS_KEY }}"
-          terraform init --chdir=${{ env.TF_BASE_DIR }}
+          cd ${{ env.TF_BASE_DIR }}
+          terraform init
 
       - name: Terraform Format
-        run: terraform fmt -chdir=${{ env.TF_BASE_DIR }} -check -recursive
+        run: |
+          cd ${{ env.TF_BASE_DIR }}
+          terraform fmt -chdir=${{ env.TF_BASE_DIR }} -check -recursive
 
       - name: Terraform Validate
-        run: terraform validate -chdir=${{ env.TF_BASE_DIR }}
+        run: |
+          cd ${{ env.TF_BASE_DIR }}
+          terraform validate -chdir=${{ env.TF_BASE_DIR }}
 
       - name: Terraform Plan
-        run: terraform plan -chdir=${{ env.TF_BASE_DIR }}
+        run: |
+          cd ${{ env.TF_BASE_DIR }}
+          terraform plan -chdir=${{ env.TF_BASE_DIR }}
 
