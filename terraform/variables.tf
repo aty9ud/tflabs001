@@ -7,5 +7,12 @@ variable "tstrsgname" {
 variable "location" {
   type        = string
   description = "favoured region"
-  default     = "eastus"
+  #default     = "eastus"
+  nullable    = false
+}
+
+variable "adgtest_tags" {
+  type        = map(string)
+  description = "adgtest tags"
+  nullable    = true
 }
