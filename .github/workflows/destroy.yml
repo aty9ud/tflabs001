@@ -38,7 +38,7 @@ jobs:
   terraform-now-destroy:
     runs-on: ubuntu-latest
     needs: terraform-plan-destroy
-    env: live
+    environment: live
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
