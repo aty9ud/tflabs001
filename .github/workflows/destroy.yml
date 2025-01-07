@@ -1,4 +1,4 @@
-name: promote
+name: destroy
 
 # Controls when the workflow will run
 on:
@@ -37,6 +37,11 @@ jobs:
           cd ${{ env.TF_BASE_DIR }}
           # terraform init -backend-config="access_key=${{ env.ARM_ACCESS_KEY }}"
           terraform init
+
+      - name: Terraform Destroy Plan
+        run: |
+          cd ${{ env.TF_BASE_DIR }}
+          terraform plan -destroy
 
       - name: Terraform Destroy
         run: |
