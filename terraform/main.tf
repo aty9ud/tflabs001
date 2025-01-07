@@ -9,3 +9,10 @@ module "ResourceGroupModule" {
   base_name = "TerraformExampleADG01"
   location  = "northeurope"
 }
+
+module "StorageAccountModule" {
+  source              = "./modules/stgacc"
+  base_name           = "TerraformExampleADG01"
+  resource_group_name = module.ResourceGroupModule.rg_name_out
+  location            = "northeurope"
+}

@@ -6,6 +6,6 @@ variable "base_name" {
 
 variable "location" {
   type        = string
-  description = "alternate region"
+  description = "alternate region for resource group module deployment"
   nullable    = false
 }
