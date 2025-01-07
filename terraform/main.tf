@@ -3,3 +3,9 @@ resource "azurerm_resource_group" "test_resource_group" {
   location = var.location
   tags     = var.adgtest_tags
 }
+
+module "ResourceGroupModule" {
+  source    = "./modules/rgmod"
+  base_name = "TerraformExampleADG01"
+  location  = "northeurope"
+}
