@@ -1,6 +1,6 @@
 location = "eastus"
 
 adgtest_tags = {
-    istest  = "true"
-    project = "tflabs001"
+  istest  = "true"
+  project = "tflabs001"
 }
