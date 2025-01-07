@@ -7,7 +7,6 @@ variable "tstrsgname" {
 variable "location" {
   type        = string
   description = "favoured region"
-  #default     = "eastus"
   nullable    = false
 }
 
