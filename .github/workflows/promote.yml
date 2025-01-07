@@ -43,4 +43,4 @@ jobs:
       - name: Terraform Apply
         run: |
           cd ${{ env.TF_BASE_DIR }}
-          terraform apply -auto-approve
+          terraform apply -var-file="conf/scope.tfvars" -auto-approve
