@@ -7,4 +7,5 @@ resource "azurerm_resource_group" "test_resource_group" {
 module "ResourceGroupModule" {
   source    = "./modules/rgmod"
   base_name = "TerraformExampleADG01"
+  location  = "northeurope"
 }
